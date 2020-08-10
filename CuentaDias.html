@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Dias</title>
+    <style>
+        body {background-color: grey;
+              text-align: center;
+              color: honeydew;
+              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+        input, button{
+             width: 20%;
+             font-size: 38px;
+        }
+
+        p {
+            font-size: 130px;
+        }
+    </style>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+
+</head>
+<body>
+
+    <h1>CALCULAR DÍAS</h1>
+    <hr>
+    <input type="date" id="myDate" value="">    
+    <button onclick="calcular()">Calculo</button>
+    <hr>
+    <p id="imprimir"></p>
+    
+    <script>
+    function calcular() {
+      var fechaAct = document.getElementById("myDate").value;
+
+        var fechaFin       = new Date(fechaAct).getTime() 
+        var fechaInicio    = new Date('2020-01-01').getTime() 
+        
+        var diff = fechaFin - fechaInicio;
+        
+        var calculo = diff/(1000*60*60*24);
+        document.getElementById("imprimir").innerHTML = calculo;
+
+    }
+
+
+
+   
+
+
+
+
+    </script>
+    
+    </body>
+</body>
+</html>
